@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Account{% endblock %}
+
+{% block content %}
+  <div class="account container">
+    <div class="row" style="background-color:#dd8e58; outline-style: dashed;">
+      <div class="col-md-6">
+        <h2>User Details</h2>
+        <p>Name: {{ user.first_name }}</p>
+        <p>Contact Number: {% if user.profile %}{{ user.profile.contact_number }}{% else %}Not available{% endif %}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Delivery Address: {% if user.profile %}{{ user.profile.address }}{% else %}Not available{% endif %}</p>
+      </div>
+      <form action="{% url 'logout' %}" method="post" style=" padding-bottom: 3rem;">
+        {% csrf_token %}
+        <button type="submit">LOG OUT</button>
+      </form>
+      <div class="col-md-6">
+        <h2>Edit Details</h2>
+        <form method="post">
+          {% csrf_token %}
+          <label for="name">Name:</label>
+          <input type="text" name="name" value="{{ user.first_name }}"><br>
+
+          <label for="address">Address:</label>
+          <input type="text" name="address" value="{{ user.profile.address }}" class="thin-input"><br>
+
+          <label for="contact_number">Contact Number:</label>
+          <input type="text" name="contact_number" value="{{ user.profile.contact_number }}" class="thin-input"><br>
+
+          <label for="email">Email:</label>
+          <input type="email" name="email" value="{{ user.email }}"><br>
+
+          <button type="submit" style="background-color: rgb(41, 78, 110);">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

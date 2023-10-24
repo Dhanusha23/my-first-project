@@ -1,0 +1,250 @@
+
+.body{
+  background-color: #708A81;
+}
+.navbar {
+    background-color: #E5D1B8;
+    border-bottom:5px#C2956E;
+    padding-left: 1px;
+}
+.nav-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.navbar-expand-lg {
+  border-color: aquamarine;
+  border-radius:5rem; 
+
+}
+
+.btn {
+  background-color: #596762
+}
+
+/*home*/
+.d-block {
+  height: 600px; /* Set the desired height for the carousel images */
+  object-fit: cover;
+}
+
+.carousel-inner {
+  transition-duration: 5s; /* 5 seconds */
+  padding-bottom: 10px;
+}
+.carousel-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh; /* Adjust the height as needed */
+}
+.med{
+  background-color: antiquewhite;
+  padding-bottom: 10px;
+
+}
+
+.card {
+  padding: 10px;
+  margin-bottom: 30px;
+  width:18rem;
+  height: 36rem;
+}
+.card-title {
+  white-space: nowrap;     /* Prevent text from wrapping to the next line */
+  overflow: hidden;        /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when text overflows */
+  width: 217px;
+}
+
+/*cart*/
+.cart-card{
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: white;
+  display: flex;
+}
+#wkmu{
+  height: 25rem;
+}
+.cart-row{
+  display: flex;
+}
+
+/*account*/
+.account{
+  padding-top: 2cm;
+  height: 52rem;
+}
+
+/*Signup*/
+.signup{
+  background-color: chartreuse;
+    width: fit-content;
+    height: 28rem;
+    padding: 4rem;
+}
+
+
+/*footer*/
+
+.fmain{
+  display: flex;
+  align-items: center;
+}
+.ftrend{
+  padding-left: 5cm;
+}
+
+  /* Hide the centered div by default */
+        .centered-div {
+          display: none;
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background color */
+          padding: 20px;
+          border: 1px solid #7b2525;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+          z-index: 9999;
+          height:12cm;
+          width:16cm;
+        }
+  /* Style for the background overlay */
+    .overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Semi-transparent background color */
+      backdrop-filter: blur(5px); /* Apply blur effect to the background */
+      z-index: 9998; /* Place the overlay behind the centered div */
+    }
+
+
+/*Login page*/
+    .rowl{
+      
+        background-color: aliceblue;
+        height: 22rem;
+        width: 40rem;
+        display: inline-flex;
+        border-radius: 1rem;
+    }
+
+
+
+/*RESPONSIVE*/
+@media (max-width:400px){
+  /*nav*/
+  .navbar{
+    max-width: fit-content;
+  }
+  .navbar-nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+  .nav-link{
+    width:fit-content
+  }
+  .navbar-brand{
+   font-size: 14px;
+   display: contents;
+  }
+  /*Home*/
+  .body{
+    font-size: 14px;
+  }
+  .container{
+    width: 8%;
+  }
+  .carousel-inner {
+    height: 11rem;
+    padding-bottom: 13rem;
+  }
+  .d-block {
+    height: 100%;
+    object-fit: fill;}
+  pre{
+    font-size: xx-small;
+    white-space: pre-line;
+    padding-left: 0.5rem;}
+
+  .med{
+    height: 50rem;
+  }
+  h5{
+    font-size: small;
+  }
+
+
+/*footer*/
+  ._2Brcj4{
+    font-size: xx-small;
+    white-space: nowrap;
+    place-content: space-between;
+}
+.fmain {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  font-size: xx-small;
+  text-align: center;
+}
+
+  /* cart */
+  .cart-container{
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 2rem;
+  }
+  .cart-row {width: 10rem;
+      display: inline-table;
+          }
+
+  .col-md-3{width: fit-content;}
+  .cart-card{width: 10rem;
+        height: 9rem;
+        border-width: medium;
+}
+  .col-md-4{width:5rem;}
+  .col-md-8{width: 2%;}
+  .card-body{
+    font-size:small;
+    display: table-footer-group;
+    }
+
+
+/*w/k/m/u*/
+.row{
+  width: 14rem;
+    height: 23rem;
+    display: inherit;
+}
+.container{
+  display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card{
+  width: fit-content;
+  height: fit-content;
+}
+#wkmu{
+  height: 12rem;
+    width: 10rem;
+}
+}

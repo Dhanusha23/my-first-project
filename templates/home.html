@@ -1,0 +1,113 @@
+{%extends 'base.html'%}
+{%load static%} 
+{% block title%}Home{%endblock%}
+
+{%block content%}
+
+<div class="container" style="padding-bottom: .5cm; ">
+  <div class="row justify-content-center mt-1 mx-auto" style="width: 100%; ">
+    <div id="myCarousel" class="carousel slide " data-bs-ride="carousel" >
+      <div class="carousel-inner" style="padding-top: .5cm;">
+        <div class="carousel-item active">
+          <img src="{% static '/images/1.jpg'%}" class="d-block w-100" alt="Image 1">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static '/images/2.jpg'%}" class="d-block w-100" alt="Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="{% static '/images/3.jpg'%}" class="d-block w-100" alt="Image 3">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="med" style="height: 50%; width: 100%; ">
+        <pre> 
+
+        Welcome to our clothing page, where fashion meets individuality and style is a reflection
+        of your unique taste. At <b>ORION ARM</b>, we believe that clothing is not just about covering
+        your body; it's a form of self-expression and a canvas to showcase your personality.
+            
+        We curate a diverse collection of clothing, carefully handpicked to cater to a wide range of
+        tastes and preferences. Whether you are a trendsetter, a classic enthusiast, or a bold fashion explorer,
+        we have something to resonate with your style.
+            
+        Our clothing page is a celebration of diversity, embracing various cultures, colors, and designs from 
+        around the world. From timeless classics to cutting-edge fashion, our collection caters to all age groups, 
+        genders, and occasions. We believe that every individual has their own unique taste, and we take pride in offering
+        a selection that empowers you to embrace your individuality confidently.
+           
+        Expect more than just clothing; our page is an experience, a journey through the world of fashion and creativity. 
+        Each piece is carefully crafted with attention to detail, quality, and comfort, ensuring that you not only look good 
+        but also feel great in what you wear.
+            
+        Our clothing page is not just about selling garments; it's about fostering a community of fashion enthusiasts who appreciate 
+        the art of dressing up. We invite you to explore, experiment, and discover your own style journey with us.
+          
+        At <b>ORION ARM</b>, we believe that fashion has the power to transform, to inspire, and to make a statement. It's not about 
+        following trends blindly; it's about finding what speaks to you and making it your own.
+            
+        So, whether you're here to find the perfect outfit for a special occasion or to revamp your everyday wardrobe, 
+        we've got you covered. Step into our clothing page and let your taste be the guiding star in creating your fashion story. 
+        Embrace your individuality, and let your clothing reflect the essence of you! Happy shopping</pre>
+  </div>
+</div>
+<footer style="background-color: rgb(123, 94, 94); height: 5.5cm; padding-top:none;" >
+  <div class="_2Brcj4" style="display: flex;">
+
+    <div style="width: 30%;  padding-left: 2cm;">
+      <p style="color:rgb(255, 255, 255);"><h5>Consumer Policy:</h5></span>
+        Cancellation & Returns<br>
+        Terms Of Use<br>
+        Security<br>
+        Privacy<br>
+      </p>
+    </div>
+
+    <div style="width: 30%; padding-left: 3cm;">
+      <p style="color:rgb(255, 255, 255);"><h5>Social:</h5></span>
+        <A style="color: aliceblue;" href="mailto:hege@example.com">Instagram</A><br>
+        <a style="color: aliceblue;" href="mailto:hege@example.com">Youtube</a><br>
+        <a style="color: aliceblue;" href="mailto:hege@example.com">Pinterest</a><br>
+      </p>
+    </div>
+
+    <div style="padding-left: 1rem; width: 30%;  padding-left: 2cm;">
+      <p style="color:rgb(255, 255, 255);"><h5>Our Registered Address:</h5></span>
+        ORION ARM<br>
+        123 Main Street<br>
+        Apartment 4B<br>
+        New York, NY 10001<br>
+        United States<br>
+        <a style="color: aliceblue;" href="mailto:hege@example.com">email:orionarm@gmail.com </a>
+      </p>
+    </div>
+  
+  </div>
+<div class="fmain">
+  <div class="ftrend">
+    <i class="fa-solid fa-gift"></i>
+    Gift Cards          
+  </div>
+  <div class="ftrend">
+    <i class="fa-solid fa-handshake-angle"></i>
+    Help Centre 
+  </div>
+  <div class="ftrend">
+    <i class="fa-regular fa-copyright"></i>
+    2023 OrionArm.com
+  </div>
+
+</div>
+</footer>
+{%endblock%}

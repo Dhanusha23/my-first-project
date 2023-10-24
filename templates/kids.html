@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Kids{% endblock %}
+
+{% block content %}
+  <h2 style="text-align: center; padding-top: 1cm; padding-bottom: 1cm;">KIDS</h2>
+  <div class="container">
+    <div class="row">
+      {% for kid in kids %}
+        <div class="col-md-3">
+          <div class="card" >
+            <img src="{{ kid.kimage }}" class="card-img-top" id="wkmu" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{ kid.kname }}</h5>
+              <p class="card-text">₹{{ kid.kprice }}</p>
+              <button class="btn btn-primary btn-add-to-cart" data-id="{{ kid.id }}">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <script>
+    $(document).ready(function() {
+      $('.btn-add-to-cart').click(function() {
+        var card = $(this).closest('.card');
+        var itemName = card.find('.card-title').text().trim();
+        var itemPrice = card.find('.card-text').text().replace('₹', '').trim();
+        var itemImage = card.find('.card-img-top').attr('src').trim();
+    
+        var cart = {
+          cname: itemName,
+          cprice: itemPrice,
+          cimage: itemImage
+        };
+    
+        // Send AJAX request to save data in Cart model
+        $.ajax({
+          url: '{% url "save_to_cart" %}',
+          type: 'POST',
+          data: cart,
+          success: function(response) {
+            // Handle the response from the server
+            console.log('Server response:', response);
+            alert('Item added to cart successfully!');
+
+            // Redirect to the cart page
+            window.location.href = '{% url "cart" %}';
+
+          },
+          error: function(error) {
+            // Handle any errors that occurred during the AJAX request
+            console.error('Error:', error);
+          }
+        });
+      });
+    });
+    </script>
+{% endblock %}
+
+

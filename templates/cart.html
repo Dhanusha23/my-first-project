@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Cart{% endblock %}
+
+{% block content %}
+  <h2 style="text-align: center; padding-top: 1cm; padding-bottom: 1cm;">Cart</h2>
+  <div class="cart-container">
+    <div class="cart-row">
+      {% for item in cart_items %}
+        <div class="col-md-3" >
+          <div class="cart-card"  id="card-item-{{ item.id }}" style="width: 18rem;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{ item.cimage }}" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{ item.cname }}</h5>
+                  <p class="card-text">₹{{ item.cprice }}</p>
+                  <button class="btn btn-danger btn-remove-from-cart" data-id="{{ item.id }}">Remove</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="col-md-4">
+      <div class="cart-card">
+        <div class="card-body">
+          <h5 class="card-title">Cart Total</h5>
+          <p id="cart-total">Total: ₹{{ total_price }}</p>
+          <button class="btn btn-success btn-buy" id="showButton">Buy</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="overlay" class="overlay"></div> <!-- Background overlay -->
+  <div id="centeredDiv" class="centered-div" style="background-color: #596762; border-radius: 2cm; border-color: aliceblue; text-align:center; padding-top: 2cm; color: aliceblue; font-style: italic;">
+      <!-- Content of the centered div goes here -->
+      <p ><h3>Thank you for coming.<br>This is a prototype version of our main website. Soon, we'll introduce our brand-new website.<br>
+        I hope you will continue to support us. Return soon...😊
+      </h3></p>
+      <button id="closeButton" style="align-self: center; border-radius: 1cm; width: 5cm;">Close</button>
+  </div>
+
+
+  
+
+  <script>
+   $(document).ready(function() {
+    // Function to update cart total
+    function updateCartTotal() {
+      $.ajax({
+        url: '{% url "cart_total" %}',
+        type: 'POST',
+        success: function(response) {
+          if (response.total_price) {
+            // Update the cart total on the page
+            $('#cart-total').text('Total: ₹' + response.total_price);
+          }
+        },
+        error: function(error) {
+          console.error('Error:', error);
+        }
+      });
+    }
+
+    // Call the function initially to display the cart total
+    updateCartTotal();
+
+  // Function to remove an item from the cart and update the UI
+  function removeItemFromCart(itemId) {
+    $.ajax({
+      url: '{% url "remove_from_cart" %}',
+      type: 'POST',
+      data: { itemId: itemId },
+      success: function(response) {
+        console.log('Server response:', response);
+        if (response.success) {
+          // Remove the item's card from the UI
+          $('#cart-item-' + itemId).remove();
+          console.log('Item removed from cart successfully.');
+          alert('Item removed from cart successfully!');
+          // Update cart total after removing an item
+          updateCartTotal();
+        } else {
+          alert('Failed to remove item from cart.');
+          console.log('Failed to remove item from cart.');
+        }
+      },
+      error: function(error) {
+        console.error('Error removing item from cart:', error);
+      }
+    });
+  }
+
+  // Call the function initially to display the cart total
+  updateCartTotal();
+
+  // Remove item from cart when the "Remove" button is clicked
+  $('.btn-remove-from-cart').click(function() {
+    var itemId = $(this).data('id');
+    console.log('Removing item with ID:', itemId);
+    removeItemFromCart(itemId);
+  });
+});
+
+
+
+
+    // JavaScript code to show/hide the centered div
+const showButton = document.getElementById('showButton');
+const closeButton = document.getElementById('closeButton');
+const centeredDiv = document.getElementById('centeredDiv');
+const overlay = document.getElementById('overlay');
+
+showButton.addEventListener('click', () => {
+    centeredDiv.style.display = 'block';
+    overlay.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent scrolling on the background
+});
+
+closeButton.addEventListener('click', () => {
+    centeredDiv.style.display = 'none';
+    overlay.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Restore scrolling
+});
+
+    </script>
+    
+{% endblock %}
