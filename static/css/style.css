@@ -7,6 +7,16 @@
     border-bottom:5px#C2956E;
     padding-left: 1px;
 }
+.navbar-nav{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-items: baseline;
+}
+.ac{
+    padding-left: 12cm;
+}
+
 .nav-link {
   display: flex;
   justify-content: center;
@@ -97,7 +107,10 @@
 .ftrend{
   padding-left: 5cm;
 }
+._2Brcj4{
+  padding-left: 11rem;
 
+}
   /* Hide the centered div by default */
         .centered-div {
           display: none;
@@ -139,32 +152,60 @@
 
 
 
+
+
+
+
 /*RESPONSIVE*/
-@media (max-width:400px){
+@media (min-width:250px) and (max-width:400px){
   /*nav*/
   .navbar{
     max-width: fit-content;
+    box-sizing: border-box;
   }
   .navbar-nav{
     display: flex;
-    flex-direction: row;
+    flex-wrap: nowrap;
     align-items: center;
-}
+    justify-content: space-between;
+  }
+  .navbar-expand-lg{
+    width: fit-content;
+  }
 
+  .container-fluid{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 10px;
+    min-width: max-content;
+  }
+  .logo{
+    width: 40px;
+    height: 30px;
+  }
   .nav-link{
-    width:fit-content
+    width:fit-content;
+    margin-right: 8px;
+    height: fit-content;
   }
   .navbar-brand{
-   font-size: 14px;
+   font-size: 12px;
    display: contents;
   }
+  .ac{
+    margin-left: 30px;
+    padding-left: 1rem;
+    }
   /*Home*/
   .body{
     font-size: 14px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: absolute;
   }
-  .container{
-    width: 8%;
-  }
+
   .carousel-inner {
     height: 11rem;
     padding-bottom: 13rem;
@@ -190,6 +231,8 @@
     font-size: xx-small;
     white-space: nowrap;
     place-content: space-between;
+    padding-left: 0rem;
+
 }
 .fmain {
   display: flex;
@@ -201,7 +244,9 @@
   font-size: xx-small;
   text-align: center;
 }
-
+.ftrend{
+  padding: 1cm;
+}
   /* cart */
   .cart-container{
       width: 100%;
@@ -230,7 +275,7 @@
 /*w/k/m/u*/
 .row{
   width: 14rem;
-    height: 23rem;
+    height: 14rem;
     display: inherit;
 }
 .container{
@@ -238,13 +283,186 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding-right: 1.6rem;
 }
 .card{
-  width: fit-content;
+  width: 12rem;
+  height: fit-content;
+}
+.col-md-3{
+  width:25%;
+}
+#wkmu{
+  height: 12rem;
+    width: 10rem;
+}
+
+/*Account*/
+.rowl{
+  height: 18rem;
+  width: 22rem;
+}
+.rowa{
+  width: 15rem;
+  height: 30rem;
+  display: math;}
+.centered-div{
+  width: 19rem;
+  height: 20rem;
+}
+h3{
+  font-size: small;
+}
+}
+
+
+
+
+
+
+
+@media (min-width:480px) and (max-width:720px){
+  /*nav*/
+  .navbar{
+    box-sizing: border-box;
+  }
+  .navbar-nav{
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .container-fluid{
+    display: flex;
+    flex-wrap: nowrap;
+    font-size: 10px;
+    min-width: max-content;
+  }
+  .logo{
+    width: 40px;
+    height: 30px;
+  }
+  .nav-link{
+    width:fit-content;
+    margin-right: 8px;
+    height: fit-content;
+  }
+  .navbar-brand{
+   font-size: 12px;
+   display: contents;
+  }
+  .ac{
+    margin-left: 30px;
+    padding-left: 1rem;
+    }
+  /*Home*/
+  .body{
+    display: block;
+    font-size: 14px;
+    min-height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    position: fixed;
+  }
+
+  .carousel-inner {
+    height: 20rem;
+  }
+  .d-block {
+    height: 100%;
+    object-fit: fill;}
+  pre{
+    font-size: xx-small;
+    white-space: pre-line;
+    padding-left: 0.5rem;}
+
+  .med{
+    height: 50rem;
+  }
+  h5{
+    font-size: small;
+  }
+
+
+/*footer*/
+  ._2Brcj4{
+    font-size: xx-small;
+    white-space: nowrap;
+}
+.fmain {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: center;
+  font-size: xx-small;
+  text-align: center;
+}
+.ftrend{
+  padding-left: 4cm;
+}
+
+  /* cart */
+  .cart-container{
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 2rem;
+  }
+  .cart-row {width: 10rem;
+      display: inline-table;
+          }
+
+  .col-md-3{width: 25%;}
+  .cart-card{width: 10rem;
+        height: 9rem;
+        border-width: medium;
+}
+  .col-md-4{width:5rem;}
+  .col-md-8{width: 2%;}
+  .card-body{
+    font-size:small;
+    display: table-footer-group;
+    }
+
+
+/*w/k/m/u*/
+.row{
+  width: 36rem;
+    height: 23rem;
+    display: inherit;
+}
+.container{
+  display: flex;
+  flex-direction: column;   
+}
+.card{
+  width: 12rem;
   height: fit-content;
 }
 #wkmu{
   height: 12rem;
     width: 10rem;
+}
+
+/*Account*/
+.rowl{
+  height: 18rem;
+  width: 22rem;
+}
+.rowa{
+  width: 15rem;
+  height: 30rem;
+  display: math;}
+.centered-div{
+  width: 19rem;
+  height: 20rem;
+}
+h3{
+  font-size: small;
 }
 }
