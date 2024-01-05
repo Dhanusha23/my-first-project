@@ -91,10 +91,11 @@
 
 /*Signup*/
 .signup{
-  background-color: chartreuse;
     width: fit-content;
     height: 28rem;
     padding: 4rem;
+    background-image: url("images1.jpg");
+    
 }
 
 
@@ -125,6 +126,7 @@
           z-index: 9999;
           height:12cm;
           width:16cm;
+          box-shadow: 10px 13px;
         }
   /* Style for the background overlay */
     .overlay {
@@ -157,7 +159,7 @@
 
 
 /*RESPONSIVE*/
-@media (min-width:250px) and (max-width:400px){
+@media (min-width:250px) and (max-width:450px){
   /*nav*/
   .navbar{
     max-width: fit-content;
@@ -231,7 +233,7 @@
     font-size: xx-small;
     white-space: nowrap;
     place-content: space-between;
-    padding-left: 0rem;
+    padding-left: 1em;
 
 }
 .fmain {
@@ -243,6 +245,7 @@
   justify-content: center;
   font-size: xx-small;
   text-align: center;
+
 }
 .ftrend{
   padding: 1cm;
@@ -280,22 +283,29 @@
 }
 .container{
   display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding-right: 1.6rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-right: 1.6rem;
+  gap: 1rem;
 }
+/* Adjust col-md-3 to show 2 columns per row */
+ .col-md-3 {
+  flex: 0 0 calc(50% - 1rem); /* Adjust width for 2 columns with margin */
+  max-width: calc(50% - 1rem); /* Adjust max-width */
+  margin: 0.5rem; /* Add some space between columns */
+
+  }
 .card{
-  width: 12rem;
+  width: 10rem;
   height: fit-content;
 }
-.col-md-3{
-  width:25%;
-}
-#wkmu{
+
+/* Adjust the wkmu image size for 2 columns */
+#wkmu {
   height: 12rem;
-    width: 10rem;
-}
+  width: 100%; /* Ensure the image fills its container */
+  max-width: 100%; /* Make sure the image doesn't exceed its container */
+  }
 
 /*Account*/
 .rowl{
@@ -364,7 +374,7 @@ h3{
     width: 100vw;
     overflow-x: hidden;
     box-sizing: border-box;
-    position: fixed;
+    position: absolute;
   }
 
   .carousel-inner {
@@ -390,6 +400,7 @@ h3{
   ._2Brcj4{
     font-size: xx-small;
     white-space: nowrap;
+    padding-left: 6em;
 }
 .fmain {
   display: flex;
@@ -400,6 +411,8 @@ h3{
   justify-content: center;
   font-size: xx-small;
   text-align: center;
+  padding-right: 15em;
+
 }
 .ftrend{
   padding-left: 4cm;
