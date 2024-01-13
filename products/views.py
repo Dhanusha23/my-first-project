@@ -12,7 +12,7 @@ def home(request):
     #products=Product.objects.all()
     return render(request,'home.html')#,{'products':products})
 
-def Home(request):
+#def Home(request):
     return HttpResponse('<h1>ABOUT PAGE</h1>')
 
 def Kid(request):
