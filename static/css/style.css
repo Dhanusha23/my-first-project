@@ -82,6 +82,10 @@
 .cart-row{
   display: flex;
 }
+#ct{
+  width: 160px;
+
+}
 
 /*account*/
 .account{
@@ -92,11 +96,17 @@
 /*Signup*/
 .signup{
     width: fit-content;
-    height: 28rem;
+    height: 32rem;
+    position: absolute;
+    top: 10rem;
+    left: 23rem;
+    background-color: #C2956E;
     padding: 4rem;
-    background-image: url("images1.jpg");
-    
+    border: inset;
+    border-radius: 1rem;
 }
+
+
 
 
 /*footer*/
